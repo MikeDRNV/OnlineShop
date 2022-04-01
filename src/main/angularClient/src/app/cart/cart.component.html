@@ -1,0 +1,20 @@
+<div class="container mt-3">
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <h2 class="mt-2 mb-5">Cart</h2>
+    <hr/>
+    <div *ngFor="let cartItem of cartItems">
+      <div>
+        <app-cart-item
+          [cartItem]="cartItem"
+          (changeQuantityEvent)="increaseQuantity($event)"
+          (decreaseQuantityEvent)="decreaseQuantity($event)">
+        </app-cart-item>
+      </div>
+    </div>
+  </div>
+  <div class="shadow p-3 mb-5 bg-white rounded">
+    <div class="col-4">
+      <button (click)="toOrder(cartItems)" class="px-5 btn-lg btn-block btn-order">TO ORDER</button>
+    </div>
+  </div>
+</div>

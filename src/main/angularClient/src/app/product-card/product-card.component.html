@@ -1,0 +1,21 @@
+<div *ngIf="product">
+    <div class="card">
+        <div class="img-desc">
+            <img class="image" style="width:100%" src="{{product.imgLink}}" />
+            <p class="content">{{product.name}} {{product.shortDescription}}</p>
+        </div>
+        <div class="rating-price d-flex align-items-end justify-content-between">
+            <fieldset class="rating">
+                <label for="star5">5 stars</label>
+                <label for="star4">4 stars</label>
+                <label for="star3">3 stars</label>
+                <label for="star2">2 stars</label>
+                <label for="star1">1 star</label>
+            </fieldset>
+            <span class="price d-flex align-items-center"><b>{{product.price}} $</b></span>
+        </div>
+        <div class="to-bottom">
+            <button (click)="addProductToCart(product.id)" class="toCart">Add to Cart</button>
+        </div>
+    </div>
+</div>

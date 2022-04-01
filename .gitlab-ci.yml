@@ -1,0 +1,27 @@
+stages:
+  - eslint
+  - test
+
+eslint:
+  image: node
+  tags:
+    - docker
+  stage: eslint
+  script:
+    - cd src/main/angularClient
+    - npm ci
+    - npm run lint
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      changes:
+        - src/main/angularClient/**/*
+
+test:
+  image: gradle:latest
+  tags:
+    - docker
+  stage: test
+  script:
+    - gradle test
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'

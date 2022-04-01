@@ -1,0 +1,19 @@
+<div *ngIf="cartItem">
+    <div class="d-flex justify-content-between align-items-center mt-3 p-2 items rounded">
+      <div class="d-flex flex-row">
+          <img class="rounded" src="{{cartItem.imageUrl}}" height="100" width="100">
+          <div class="ml-2">
+              <span class="content">{{cartItem.name}}</span>
+              <span class="content">{{cartItem.description}}</span>
+          </div>
+      </div>
+      <div class="col-6 d-flex flex-row align-items-center">
+          <div class="col-6 text-center">
+              <button (click)="decreaseQuantity(cartItem.productId)" class="btn-circle border border-dark">-</button>
+              <span> {{cartItem.quantity}} </span>
+              <button (click)="increaseQuantity(cartItem.productId)" class="btn-circle border border-dark">+</button>
+          </div>
+          <span class="col-6 justify-content-end font-weight-bold text-right"><h5>{{cartItem.priceTotal}} $</h5></span>
+      </div>
+    </div>
+  </div>

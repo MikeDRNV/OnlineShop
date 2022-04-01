@@ -1,0 +1,73 @@
+.card {
+  font-family: arial;
+  border: solid 1px;
+  border-color: gray;
+  width: 300px;
+}
+
+.image {
+    display: block;
+    text-align: center;
+    height: 240px;
+}
+
+.toCart {
+    border: none;
+    padding: 12px;
+    color: white;
+    background-color: rgb(211, 131, 39);
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+.price {
+    margin-right: 5px;
+    margin-bottom: 13px;
+}
+
+.content {
+    color: gray;
+    margin-right: 5px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.to-bottom {
+    margin: 5px;
+}
+
+.img-desc {
+    height: 280px;
+}
+
+.rating {
+    float:left;
+    border:none;
+}
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0, 0, 0, 0);
+}
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:rgb(211, 131, 39);
+}
+.rating:not(:checked) > label:before {
+    content:'★ ';
+}
